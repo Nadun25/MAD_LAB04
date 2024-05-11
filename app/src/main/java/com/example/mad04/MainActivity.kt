@@ -1,4 +1,4 @@
-package com.example.taskmanagerappmad
+package com.example.mad04
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +10,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.launch
+import com.example.taskmanagerappmad.Task
+import com.example.taskmanagerappmad.TaskDatabase
+import com.example.taskmanagerappmad.TaskRepository
+import com.example.taskmanagerappmad.TaskViewModel
+import com.example.taskmanagerappmad.TaskViewModelFactory
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(),

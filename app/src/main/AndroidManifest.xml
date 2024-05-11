@@ -13,6 +13,18 @@
         android:theme="@style/Theme.MAD04"
         tools:targetApi="31">
         <activity
+            android:name=".TaskAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".TaskViewModelFactory"
+            android:exported="false" />
+        <activity
+            android:name=".TaskViewModel"
+            android:exported="false" />
+        <activity
+            android:name=".TaskRepository"
+            android:exported="false" />
+        <activity
             android:name=".TaskDao"
             android:exported="false" />
         <activity
