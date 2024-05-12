@@ -1,5 +1,7 @@
 package com.example.mad04
 
+
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,8 @@ class TaskAdapter(
         fun onDeleteClick(task: Task)
     }
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
         return TaskViewHolder(view)
@@ -29,6 +33,14 @@ class TaskAdapter(
         holder.deleteButton.setOnClickListener {
             onDeleteClickListener.onDeleteClick(task)
         }
+
+        holder.updateButton.setOnClickListener{
+            val intent = Intent(holder.itemView.context,EditTask::class.java).apply {
+                putExtra("taskId",task.id)
+            }
+            holder.itemView.context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +50,7 @@ class TaskAdapter(
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val deleteButton: Button = itemView.findViewById(R.id.deleteButton)
+        val updateButton:Button = itemView.findViewById(R.id.updateButton)
         private val titleTextView: TextView = itemView.findViewById(R.id.textViewTitle)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.textViewDescription)
         private val dateTextView: TextView = itemView.findViewById(R.id.textViewDate)
