@@ -5,6 +5,8 @@ plugins {
 
 }
 
+
+
 android {
     namespace = "com.example.mad04"
     compileSdk = 34
